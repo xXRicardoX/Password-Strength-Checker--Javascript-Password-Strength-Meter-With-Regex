@@ -35,7 +35,7 @@ body {
   font-weight: 500;
 }
 
-.container .ininputBox {
+.container .inputBox {
   position: relative;
   width: 100%;
 }
@@ -66,5 +66,77 @@ body {
     width: 0;
     height: 100%;
     transition: 0.5s;
-    background: #f00;
+    
+}
+
+.container.Fraco .strengthMeter::before {
+  width: 10%;
+  background: #f00;
+  filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);
+}
+
+.container.Médio .strengthMeter::before {
+  width: 66.66%;
+  background: #ffa500;
+  filter: drop-shadow(0 0 5px #ffa500) drop-shadow(0 0 10px #ffa500) drop-shadow(0 0 20px #ffa500);
+}
+
+.container.Forte .strengthMeter::before {
+  width: 100%;
+  background: #0f0;
+  filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 10px #0f0) drop-shadow(0 0 20px #0f0);
+}
+
+.container .strengthMeter::after {
+  position: absolute;
+  top: -45px;
+  left: 30px;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.container.Fraco .strengthMeter::after {
+  content: "Sua Senha está Fraco";
+  color: #f00;
+  filter: drop-shadow(0 0 5px #f00);
+  
+}
+.container.Médio .strengthMeter::after {
+  content: "Sua Senha está Mediano";
+  color: #ffa500;
+  filter: drop-shadow(0 0 5px #ffa500);
+  
+}
+.container.Forte .strengthMeter::after {
+  content: "Sua Senha está Forte";
+  color: #0f0;
+  filter: drop-shadow(0 0 5px #0f0);
+  
+}
+
+.show
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: #333;
+  border: 6px solid #222;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show::before{
+  content: 'Show';
+  font-size: 0.6em;
+  color: #fff;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.show.hide::before{
+  content: 'Hide';
 }
